@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap');
+
+
+$color-band: #75efff;
+$color-bg: #101c31;
+$color-font: #fff;
+$color-border: #ccc;
+
+
+$large: 1100px;
+$ex-medium: 900px;
+$medium: 768px;
+$small: 550px;
+$extraSmall: 450px;
+
+
+$pm-15: 150px;
+$pm-10: 100px;
+$pm-8: 80px;
+$pm-6: 60px;
+$pm-5: 50px;
+$pm-4: 40px;
+$pm-2: 20px;
+$pm-1: 10px;
+
+$h1: 35px;
+$h2: 30px;
+$h3: 25px;
+$h4: 22px;
+$h5: 20px;
+$transition: all 0.3s ease-in-out;
+
+
+.categories{
+    main{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-gap: clamp(15px, 5vw, 30px);
+        @media (max-width: $large) {
+            grid-template-columns: 1fr;
+        }
+        .category{
+            background-color: rgba($color-band, $alpha: 0.1);
+            color: $color-font;
+
+            &:first-child{
+                @media (max-width: $large) {
+                    padding-top: clamp(10px, 3vw, 30px);
+                    @media (max-width: $small) {
+                        padding-top: 0;
+                    }
+                }
+                img{
+                    cursor: pointer;
+                }
+            }
+            .img-container{
+                display: flex;
+                justify-content: center;
+                img{
+                    display: block;
+                    width: 100%;
+                    max-width: 300px;
+                    @media (max-width: $small) {
+                        max-width: 100%;
+                    }
+                }
+            }
+            article{
+                padding: clamp(10px, 3vw, 30px);
+                span{
+                    display: block;
+                    color: $color-band;
+                    margin-bottom: clamp(8px, 3vw, 15px);
+                }
+                .h3{
+                    font-weight: 300;
+                    margin-bottom: clamp(8px, 3vw, 15px);
+                }
+
+                p{
+                    font-weight: lighter;
+                    margin-bottom: clamp(8px, 3vw, 15px);
+                }
+            }
+
+            &.categoryTwo{
+                padding: clamp(10px, 3vw, 30px);
+                .content{
+                    display: grid;
+                    grid-template-columns: 1fr 2fr;
+                    @media (max-width: $medium) {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .img-container{
+                        img{
+                            @media (max-width: $medium) {
+                                margin-bottom: clamp(10px, 3vw, 30px);
+                            }
+                        }
+                    }
+                    article{
+                        padding: 0 0 0 30px;
+                        @media (max-width: $medium) {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

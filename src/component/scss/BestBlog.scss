@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap');
+
+
+$color-band: #75efff;
+$color-bg: #101c31;
+$color-font: #fff;
+$color-border: #ccc;
+
+
+$large: 1100px;
+$ex-medium: 900px;
+$medium: 768px;
+$small: 550px;
+$extraSmall: 450px;
+
+
+$pm-15: 150px;
+$pm-10: 100px;
+$pm-8: 80px;
+$pm-6: 60px;
+$pm-5: 50px;
+$pm-4: 40px;
+$pm-2: 20px;
+$pm-1: 10px;
+
+$h1: 35px;
+$h2: 30px;
+$h3: 25px;
+$h4: 22px;
+$h5: 20px;
+$transition: all 0.3s ease-in-out;
+
+
+.BestBlogs{
+    .stories-header{
+        .title-container{
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            &::after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: rgba($color-band, $alpha: 0.1);
+                bottom: 0;
+                left: 0;
+            }
+            .title{
+                font-weight: 400;
+                display: inline-block;
+                background-color: rgba($color-band, $alpha: 0.1);
+                padding: 10px;
+                margin-bottom: 2px;
+            }
+        }
+    }
+    .blog-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: clamp(15px, 5vw, 30px);
+
+        @media (max-width: $medium) {
+            grid-template-columns:1fr;
+        }
+        .blog{
+            background-color: rgba($color-band, $alpha: 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            &:hover{
+                .img-container{
+                    &::after{
+                        opacity: 1;
+                    }
+                }
+            }
+            .img-container{
+                position: relative;
+                padding-top: 50%;
+                overflow: hidden;
+                cursor: pointer;
+                margin-bottom: clamp(10px, 3vw, 30px);
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba($color-bg, $alpha: 0.2);
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                    z-index: 0;
+                    transition: $transition;
+                }
+                img{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    top: 0;
+                    left: 0;
+                }
+            }
+
+            .content{
+                padding: clamp(10px, 3vw, 30px);
+                article{
+                    text-align: center;
+
+                    .type{
+                        color: $color-border;
+                        margin-bottom: clamp(7px, 2vw, 10px);
+                        display: block;
+                    }
+
+                    .h2{
+                        font-weight: 400;
+                        margin-bottom: clamp(7px, 2vw, 10px);
+                        transition: $transition;
+                        cursor: pointer;
+                        &:hover{
+                            color: $color-band;
+                        }
+                    }
+
+                    .date{
+                        font-weight: lighter;
+                        display: block;
+                        margin-bottom: clamp(7px, 2vw, 10px);
+                    }
+                    
+                    p{
+                        font-weight: 300;
+                        margin-bottom: clamp(7px, 2vw, 10px);
+                    }
+
+                    button{
+                        margin: clamp(10px, 3vw, 30px) auto;
+                        width: 200px;
+                    }
+
+                    .comment-sec{
+                        display: flex;
+                        border: 1px solid $color-border;
+                        align-items: center;
+                        justify-content: center;
+                        margin-top: clamp(7px, 2vw, 10px);
+                        .comment{
+                            flex: 1;
+                            padding: clamp(10px, 3vw, 20px) 0;
+                            border-right: 1px solid $color-border;
+
+                            span{
+                                display: block;
+                                cursor: pointer;
+                                transition: $transition;
+
+                                &:hover{
+                                    color: $color-band;
+                                }
+                            }
+                        }
+                        .social-link{
+                            flex: 1;
+                            ul{
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-around;
+
+                                li{
+                                    a{
+                                        color: $color-font;
+                                        transition: $transition;
+
+                                        &:hover{
+                                            color: $color-band;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

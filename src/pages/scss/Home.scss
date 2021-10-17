@@ -1,0 +1,23 @@
+.one{
+    background-color: royalblue;
+    padding: 10px clamp(20px, 2vw , 100px);
+    display: inline-block;
+}
+
+.two{
+    background-color: saddlebrown;
+    padding: 10px clamp(20px, 4vw , 100px);
+    display: inline-block;
+}
+
+.three{
+    background-color: seagreen;
+    padding: 10px clamp(20px, 6vw , 100px);
+    display: inline-block;
+}
+
+.four{
+    background-color: red;
+    padding: 10px clamp(20px, 8vw , 100px);
+    display: inline-block;
+}

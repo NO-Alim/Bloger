@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap');
+
+
+$color-band: #75efff;
+$color-bg: #101c31;
+$color-font: #fff;
+$color-border: #ccc;
+
+
+$large: 1100px;
+$ex-medium: 900px;
+$medium: 768px;
+$small: 550px;
+$extraSmall: 450px;
+
+
+$pm-15: 150px;
+$pm-10: 100px;
+$pm-8: 80px;
+$pm-6: 60px;
+$pm-5: 50px;
+$pm-4: 40px;
+$pm-2: 20px;
+$pm-1: 10px;
+
+$h1: 35px;
+$h2: 30px;
+$h3: 25px;
+$h4: 22px;
+$h5: 20px;
+$transition: all 0.3s ease-in-out;
+
+
+.contact{
+    .contact-header{
+        margin-bottom: clamp(30px, 4vw, 50px);
+        .img-container{
+            padding-top: clamp(150px, 23vw, 300px);
+            position: relative;
+            overflow: hidden;
+            img{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                top: 0;
+                left: 0;
+            }
+
+            .h3{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-weight: 400;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .contact-content{
+        display: flex;
+        @media (max-width: $medium) {
+            flex-direction: column;
+        }
+        .about-contact{
+            flex: 1;
+            margin-right: clamp(10px, 3vw, 20px);
+            @media (max-width: $medium) {
+                margin-right: 0;
+                margin-bottom: clamp(10px, 3vw, 20px);
+            }
+            .type{
+                margin: clamp(10px, 3vw, 20px) 0;
+                
+                span{
+                    display: block;
+                    color: $color-border;
+                }
+            }
+
+            p{
+                font-weight: 300;
+
+                &.para,&.equipment{
+                    margin: clamp(10px, 3vw, 20px) 0;
+                }
+                &.equipment{
+                    color: $color-border;
+                    font-weight: 400;
+                }
+
+                &.email-tag{
+                    font-weight: 400;
+                }
+            }
+        }
+
+        .contact-form{
+            flex: 1;
+            margin-left: clamp(10px, 3vw, 20px);
+            @media (max-width: $medium) {
+                margin-left: 0;
+            }
+            .type{
+                margin: clamp(10px, 3vw, 20px) 0;
+                
+                span{
+                    display: block;
+                    color: $color-border;
+                }
+            }
+
+            form{
+                display: flex;
+                flex-direction: column;
+
+                .input-item{
+                    margin-bottom: clamp(10px, 3vw, 20px);
+                    display: flex;
+                    flex-direction: column;
+
+                    &.warning{
+                        display: none;
+                    }
+
+                    label{
+                        margin-bottom: 5px;
+                    }
+
+                    input{
+                        padding: 10px;
+                        border: none;
+                        border-radius: 5px;
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+
+                    textarea{
+                        padding: 10px;
+                        border-radius: 5px;
+                        border: none;
+                        resize: vertical;
+                        min-height: 100px;
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+
+                    span{
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: rgb(255, 23, 23);
+                    }
+
+                    button{
+                        width: 120px;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 18px;
+                        border: nones;
+                        border-radius: 5px;
+                        background-color: $color-band;
+                        color: $color-bg;
+                        cursor: pointer;
+
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

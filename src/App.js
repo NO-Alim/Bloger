@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Navbar from './component/Navbar';
+import { useGlobalContext } from './hook/context';
+import {HashRouter as Router, Route, Switch} from 'react-router-dom'
+import Home from './pages/Home';
+import Information from './pages/Information';
+import Contact from './pages/Contact';
+import Blog from './pages/Blog';
+import Footer from './component/Footer';
+import SingleBlog from './component/SingleBlog';
 
 function App() {
+  const {loading} = useGlobalContext();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/information">
+            <Information />
+          </Route>
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
+          <Route exact path="/blog">
+            <Blog />
+          </Route>
+          <Route exact path="/singleblog">
+            <SingleBlog />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
     </div>
   );
 }

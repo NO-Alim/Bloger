@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&display=swap');
+//colors
+$color-band: #75efff;
+$color-bg: #101c31;
+$color-font: #fff;
+$color-border: #ccc;
+
+//heading
+$heading: 70px;
+$h1: 35px;
+$h2: 30px;
+$h3: 25px;
+$h4: 22px;
+$h5: 20px;
+$transition: all 0.3s ease-in-out;
+
+//media width
+$large: 1100px;
+$ex-medium: 900px;
+$medium: 768px;
+$small: 550px;
+$extraSmall: 450px;
+
+//padding marign
+$pm-15: 150px;
+$pm-10: 100px;
+$pm-8: 80px;
+$pm-6: 60px;
+$pm-5: 50px;
+$pm-4: 40px;
+$pm-2: 20px;
+$pm-1: 10px;
+
+//font
+$monospace: 'Roboto Mono', monospace;;
+$heading-font: 'Roboto', sans-serif;
+$all-font: 'Poppins', sans-serif;
+$liber: 'Libre Baskerville', serif;
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+
+body{
+  margin: 0;
+  font-family: $all-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: calc(100vw - (100vw - 100%));
+  overflow-x: hidden;
+  background-color: $color-bg;
+  color: $color-font;
+
+  a{
+    text-decoration: none;
+  }
+  h1,h2,h3,h4,h5{
+    letter-spacing: 1px;
+  }
+
+  p,a,span{
+    line-height: 130%;
+    font-size: clamp(14px, 3vw, 16px);
+    letter-spacing: 0.8px;
+  }
+
+  .heading{
+    font-size: clamp(35px, 7vw, 70px);
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: clamp(2px, 4px, 6px);
+    //letter-spacing: 6px;
+    line-height: 100%;
+  }
+
+  .h1{
+    font-size: clamp(30px, 7vw, 35px);
+    line-height: 100%;
+    font-family: 'Roboto', sans-serif;
+  }
+  .h2, .title{
+    font-size: clamp(25px, 6vw, 30px);
+    line-height: 100%;
+    font-family: 'Roboto', sans-serif;
+  }
+  .h3, .sub-title{
+    font-size: clamp(22px, 5vw, 25px);
+    line-height: 100%;
+    font-family: 'Roboto', sans-serif;
+  }
+  .h4{
+    font-size: clamp(20px, 4vw, 22px);
+    line-height: 110%;
+    font-family: $all-font;
+  }
+  .h5{
+    font-size: clamp(17px, 3vw, 20px);
+    font-family: $all-font;
+  }
+
+  .title-section{
+    padding-bottom: clamp(10px, 3.5vw, 50px);
+  }
+  .secondary-section{
+    padding: clamp(10px, 3.5vw, 50px) clamp(20px, 7vw , 100px);
+  }
+
+  .section{
+    padding: clamp(20px, 7vw, 100px) clamp(20px, 7vw , 100px);
+  }
+
+  ul{
+    list-style: none;
+  }
+
+  input,button{
+    border: none;
+    &:focus{
+      outline: none;
+    }
+  }
+
+  .btn{
+    width: clamp(100px, 18vw, 130px);
+    height: clamp(35px, 8vw, 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(14px, 3vw, 18px);
+    cursor: pointer;
+    position: relative;
+    background-color: $color-band;
+    border-radius: 5px;
+    overflow: hidden;
+
+    &::after{
+      content: '';
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color-bg, $alpha: 0.3);
+      transition: $transition;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    &:hover{
+      &::after{
+        transform: scaleX(1);
+      }
+    }
+
+    &:focus{
+      outline: none;
+    }
+  }
+}
