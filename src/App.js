@@ -10,7 +10,6 @@ import Footer from './component/Footer';
 import SingleBlog from './component/SingleBlog';
 
 function App() {
-  const {loading} = useGlobalContext();
   return (
     <div className="App">
       <Router>

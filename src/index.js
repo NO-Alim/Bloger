@@ -7,11 +7,11 @@ import {HashRouter} from 'react-router-dom'
 
 ReactDOM.render(
   <React.Fragment>
-    <HashRouter>
     <AppProvider>
-      <App />
+      <HashRouter>
+        <App />
+      </HashRouter>
     </AppProvider>
-    </HashRouter>
   </React.Fragment>,
   document.getElementById('root')
 );
