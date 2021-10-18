@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from './component/Navbar';
-import { useGlobalContext } from './hook/context';
 import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 import Home from './pages/Home';
 import Information from './pages/Information';
@@ -12,7 +11,7 @@ import SingleBlog from './component/SingleBlog';
 function App() {
   return (
     <div className="App">
-      <Router>
+      {/* <Router>
         <Navbar />
         <Switch>
           <Route exact path="/">
@@ -32,7 +31,8 @@ function App() {
           </Route>
         </Switch>
         <Footer />
-      </Router>
+      </Router> */}
+      hello
     </div>
   );
 }
